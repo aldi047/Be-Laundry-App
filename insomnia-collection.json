@@ -1,0 +1,1055 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-01-20T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_health_check",
+      "parentId": "fld_public",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/health",
+      "name": "Health Check",
+      "description": "Check API health status",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_register",
+      "parentId": "fld_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/auth/register",
+      "name": "Register User",
+      "description": "Register a new user",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"testuser\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\",\n  \"role_id\": 2\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_login",
+      "parentId": "fld_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/auth/login",
+      "name": "Login User",
+      "description": "Login user and get JWT token",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"admin@laundry.com\",\n  \"password\": \"password\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708799000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_users",
+      "parentId": "fld_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/auth/users",
+      "name": "Get All Users",
+      "description": "Get all users (admin purpose)",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708798000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_user_profile",
+      "parentId": "fld_user_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/user/profile",
+      "name": "Get User Profile",
+      "description": "Get authenticated user profile",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_profile",
+      "parentId": "fld_user_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/user/profile",
+      "name": "Update User Profile",
+      "description": "Update authenticated user profile",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"updated_username\",\n  \"email\": \"updated@example.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708799000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_change_password",
+      "parentId": "fld_user_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/user/change-password",
+      "name": "Change Password",
+      "description": "Change user password",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"current_password\": \"password\",\n  \"new_password\": \"newpassword123\",\n  \"new_password_confirmation\": \"newpassword123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708798000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_logout",
+      "parentId": "fld_user_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/user/logout",
+      "name": "Logout",
+      "description": "Logout user",
+      "method": "POST",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708797000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_shops",
+      "parentId": "fld_shops",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/shops",
+      "name": "Get All Shops",
+      "description": "Get all shops",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_shop_by_id",
+      "parentId": "fld_shops",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/shops/1",
+      "name": "Get Shop by ID",
+      "description": "Get shop by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708799000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_recommended_shops",
+      "parentId": "fld_shops",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/shops/recommended/limit?limit=5",
+      "name": "Get Recommended Shops",
+      "description": "Get recommended shops with limit",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "5"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708798000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_search_shops_by_city",
+      "parentId": "fld_shops",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/shops/search/city?city=Jakarta",
+      "name": "Search Shops by City",
+      "description": "Search shops by city",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "city",
+          "value": "Jakarta"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708797000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_delivery_shops",
+      "parentId": "fld_shops",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/shops/services/delivery",
+      "name": "Get Delivery Shops",
+      "description": "Get shops with delivery service",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708796000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_pickup_shops",
+      "parentId": "fld_shops",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/shops/services/pickup",
+      "name": "Get Pickup Shops",
+      "description": "Get shops with pickup service",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708795000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_nearby_shops",
+      "parentId": "fld_shops",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/shops/nearby",
+      "name": "Get Nearby Shops",
+      "description": "Get nearby shops based on location",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"latitude\": -6.2088,\n  \"longitude\": 106.8456,\n  \"radius\": 10\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708794000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_shop_statistics",
+      "parentId": "fld_shops",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/shops/1/statistics",
+      "name": "Get Shop Statistics",
+      "description": "Get shop statistics",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708793000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_promos",
+      "parentId": "fld_promos",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/promos",
+      "name": "Get All Promos",
+      "description": "Get all promos",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_limited_promos",
+      "parentId": "fld_promos",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/promos/limit?limit=10",
+      "name": "Get Limited Promos",
+      "description": "Get limited number of promos",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "10"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708799000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_promo_by_id",
+      "parentId": "fld_promos",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/promos/1",
+      "name": "Get Promo by ID",
+      "description": "Get promo by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708798000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_promos_by_shop",
+      "parentId": "fld_promos",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/promos/shop/1",
+      "name": "Get Promos by Shop",
+      "description": "Get promos by shop ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708797000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_featured_promos",
+      "parentId": "fld_promos",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/promos/featured/list",
+      "name": "Get Featured Promos",
+      "description": "Get featured promos",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708796000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_search_promos",
+      "parentId": "fld_promos",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/promos/search/query?q=discount",
+      "name": "Search Promos",
+      "description": "Search promos by query",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "q",
+          "value": "discount"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708795000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_laundries",
+      "parentId": "fld_laundry_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/laundry",
+      "name": "Get All Laundries",
+      "description": "Get all laundries with filters",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_my_laundries",
+      "parentId": "fld_laundry_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/laundry/my-orders",
+      "name": "Get My Laundries",
+      "description": "Get authenticated user's laundries",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708799000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_laundry_order",
+      "parentId": "fld_laundry_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/laundry",
+      "name": "Create Laundry Order",
+      "description": "Create new laundry order",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"shop_id\": 1,\n  \"promo_id\": 1,\n  \"pickup_date\": \"2025-01-25\",\n  \"pickup_time\": \"10:00\",\n  \"delivery_date\": \"2025-01-27\",\n  \"delivery_time\": \"15:00\",\n  \"pickup_address\": \"Jl. Sudirman No. 123\",\n  \"delivery_address\": \"Jl. Sudirman No. 123\",\n  \"notes\": \"Handle with care\",\n  \"total_price\": 50000\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708798000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_laundry_by_id",
+      "parentId": "fld_laundry_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/laundry/1",
+      "name": "Get Laundry by ID",
+      "description": "Get laundry by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708797000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_laundry_status",
+      "parentId": "fld_laundry_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/laundry/1/status",
+      "name": "Update Laundry Status",
+      "description": "Update laundry status",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"status\": \"in_progress\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708796000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_claim_laundry",
+      "parentId": "fld_laundry_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/laundry/claim",
+      "name": "Claim Laundry Order",
+      "description": "Claim laundry order",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"laundry_id\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708795000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_unclaimed_laundries",
+      "parentId": "fld_laundry_auth",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "url": "{{ _.base_url }}/api/laundry/status/unclaimed",
+      "name": "Get Unclaimed Laundries",
+      "description": "Get unclaimed laundries",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705708794000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_public",
+      "parentId": "wrk_laundry_api",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "Public Endpoints",
+      "description": "Endpoints that don't require authentication",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1705708800000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_auth",
+      "parentId": "fld_public",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "Authentication",
+      "description": "User authentication endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1705708800000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_shops",
+      "parentId": "fld_public",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "Shops",
+      "description": "Shop-related endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1705708799000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_promos",
+      "parentId": "fld_public",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "Promos",
+      "description": "Promo-related endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1705708798000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_authenticated",
+      "parentId": "wrk_laundry_api",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "Authenticated Endpoints",
+      "description": "Endpoints that require JWT authentication",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1705708799000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_user_auth",
+      "parentId": "fld_authenticated",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "User Management",
+      "description": "User profile and account management",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1705708800000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_laundry_auth",
+      "parentId": "fld_authenticated",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "Laundry Orders",
+      "description": "Laundry order management",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1705708799000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_laundry_api",
+      "parentId": null,
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "Laundry API",
+      "description": "Complete API collection for Laundry Application",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_base",
+      "parentId": "wrk_laundry_api",
+      "modified": 1705708800000,
+      "created": 1705708800000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8000",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "jwt_token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1705708800000,
+      "_type": "environment"
+    }
+  ]
+}

@@ -16,3 +16,5 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/get-file/{fileName}/{extension}', controller_path('HelperController@getFile'));
